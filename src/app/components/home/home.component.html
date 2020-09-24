@@ -1,0 +1,9 @@
+<mat-grid-list cols="3">
+  <mat-grid-tile class="cursor-pointer" *ngFor="let album of albums">
+    <mat-card>
+      <img mat-card-image [src]="album.images[0].url" [alt]="album.name">
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
