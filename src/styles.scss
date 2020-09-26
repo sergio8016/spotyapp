@@ -5,14 +5,27 @@ body {
   color: white !important;
 }
 
-hr {
-  border-color: white;
-}
-
 .max-width {
   max-width: 100% !important;
   width: 100% !important;
 }
+
+.mat-card-header-text {
+  margin: 0 !important;
+}
+
+table {
+  margin-top: 270px;
+
+  .mat-cell {
+    text-align: center;
+  }
+
+  .preview-image {
+    width: 60px;
+  }
+}
+
 
 .mt-1 {
   margin-top: 1em;
@@ -56,31 +69,16 @@ hr {
   cursor: pointer;
 }
 
-.img-circle {
-  border-radius: 100%;
-  width: 150px;
+.spinner {
+  margin: 30px auto;
 }
 
-.card-title,
-.card-text {
-  color: black;
+.artist-card {
+  max-width: 400px;
+  margin: 30px auto;
 }
 
-.badge {
-  margin-left: 5px;
-}
-
-.btn-outline-success {
-  margin-left: 5px;
-}
-
-.img-thumb {
-  width: 50px;
-  height: 50px;
-}
-
-
-/* Animaciones */
+/* Animations */
 
 .animated {
   -webkit-animation-duration: 1s;

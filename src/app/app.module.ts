@@ -18,7 +18,11 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import { CardComponent } from './components/shared/card/card.component';
+import {CardComponent} from './components/shared/card/card.component';
+import {NoimagePipe} from './pipes/noimage.pipe';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTableModule} from '@angular/material/table';
+import { EmbedSongPipe } from './pipes/embed-song.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,8 @@ import { CardComponent } from './components/shared/card/card.component';
     ArtistComponent,
     NavbarComponent,
     CardComponent,
+    NoimagePipe,
+    EmbedSongPipe,
   ],
   imports: [
     CommonModule,
@@ -43,6 +49,8 @@ import { CardComponent } from './components/shared/card/card.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatProgressSpinnerModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

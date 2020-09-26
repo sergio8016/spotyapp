@@ -6,22 +6,35 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## To use the app
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Login on spotify developer website
 
-## Build
+Login or create an account on [Spotify developer login/register](https://developer.spotify.com/dashboard/login)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Create an app to link with your project
 
-## Running unit tests
+Logged on spotify website go to [Spotify developer dashboard](https://developer.spotify.com/dashboard/applications) and create and app
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Client and secret ID
 
-## Running end-to-end tests
+Copy and paste the secret and client ID from spotify and replace the values on src/environments/environment.ts
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+4. Getting the access token
 
-## Further help
+On postman make a GET request to: https://accounts.spotify.com/api/token` then configure the body in this way:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+'Content-Type' : application/x-www-form-urlencoded
+'grant_type', 'client_credentials')
+'client_id', Your client ID)
+'client_secret', Your client secret);
+
+Replace the value accessToken with the token you get on response on src/environments/environment.ts
+
+5. Enjoy the app
+
+That's it you are ready to use this app
+
+## For further help
+
+If you find any opportunity to improve the app or any mistake don't hesitate email me: sergio8016@gmail.com

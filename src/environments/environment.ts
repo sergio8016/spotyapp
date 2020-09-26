@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   spotifyEndpoint: 'https://api.spotify.com/v1',
-  clientId: 'ec47738a5d984b178dfe9c2a1cbd7727',
-  clientSecret: '4e813261a77c4d34b3fdbebc11cae615',
-  accessToken: 'BQCCpSl-T7o-38LRgdGMxwewgA5vVR_6-SHaPOonMrC8tsod1FB6kSqjUFXPD9Sh5BkeWM3nB5AiEUrg-BA',
+  clientId: '[Insert your spotify client ID here]',
+  clientSecret: '[Insert your spotify client secret here]',
+  accessToken: '[Insert your access token here]',
 };
 
 /*

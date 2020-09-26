@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {SpotifyService} from '../../services/spotify.service';
-import {debounceTime, distinctUntilChanged, take, tap} from 'rxjs/operators';
+import {debounceTime, take} from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-search',
@@ -10,6 +11,7 @@ import {debounceTime, distinctUntilChanged, take, tap} from 'rxjs/operators';
 })
 export class SearchComponent {
   artists: Array<any> = [];
+  loading: boolean;
   searchForm = this.formBuilder.group({
     search: [''],
   });
@@ -21,14 +23,28 @@ export class SearchComponent {
   }
 
   onSearch(): void {
+    this.loading = true;
     const searchText = this.searchForm.get('search').value;
+    if (!searchText) {
+      this.loading = false;
+      this.artists = [];
+      return;
+    }
     this.spotifyService.searchItem(searchText)
       .pipe(
         take(1),
         debounceTime(500),
-        tap(console.log),
       )
-      .subscribe(data => this.artists = data);
+      .subscribe(data => {
+        this.artists = data;
+        this.loading = false;
+      }, error => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: error.error.message,
+        });
+      });
   }
 
 }

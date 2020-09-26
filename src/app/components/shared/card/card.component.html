@@ -1,7 +1,13 @@
 <mat-grid-list cols="3" rowHeight="100">
-  <mat-grid-tile class="cursor-pointer" *ngFor="let item of items" colspan="1" rowspan="6">
+  <mat-grid-tile
+    class="cursor-pointer animated fadeIn"
+    *ngFor="let item of items"
+    colspan="1"
+    rowspan="6"
+    (click)="goToArtistPage(item);"
+  >
     <mat-card>
-      <img mat-card-image [src]="item.images[0].url" [alt]="item.name">
+      <img mat-card-image [src]="item.images | noimage" [alt]="item.name">
       <h2>
         <em>
           {{item.name}}
