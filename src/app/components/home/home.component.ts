@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SpotifyService} from '../../services/spotify.service';
 import {take} from 'rxjs/operators';
-import {Item, SpotifyResponse} from '../../models/spotifyResponse';
+import {Item} from '../../models/newReleasesResponse.interface';
 
 @Component({
   selector: 'app-home',
@@ -21,9 +21,8 @@ export class HomeComponent implements OnInit {
       .pipe(
         take(1),
       )
-      .subscribe((data: SpotifyResponse) => {
-        console.log(data.albums.items);
-        this.albums = data.albums.items;
+      .subscribe((data: Array<Item>) => {
+        this.albums = data;
       });
   }
 

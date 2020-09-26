@@ -47,7 +47,7 @@ export interface Albums {
   total: number;
 }
 
-export interface SpotifyResponse {
+export interface NewReleasesResponseInterface {
   albums: Albums;
 }
 

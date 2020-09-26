@@ -1,0 +1,15 @@
+<mat-grid-list cols="3" rowHeight="100">
+  <mat-grid-tile class="cursor-pointer" *ngFor="let item of items" colspan="1" rowspan="6">
+    <mat-card>
+      <img mat-card-image [src]="item.images[0].url" [alt]="item.name">
+      <h2>
+        <em>
+          {{item.name}}
+        </em>
+      </h2>
+      <mat-chip-list>
+        <mat-chip *ngFor="let artist of item.artists" color="accent" selected>{{artist.name}}</mat-chip>
+      </mat-chip-list>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

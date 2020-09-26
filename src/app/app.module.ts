@@ -14,6 +14,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {CommonModule} from '@angular/common';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import { CardComponent } from './components/shared/card/card.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +27,7 @@ import {CommonModule} from '@angular/common';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +39,10 @@ import {CommonModule} from '@angular/common';
     MatCardModule,
     MatGridListModule,
     HttpClientModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

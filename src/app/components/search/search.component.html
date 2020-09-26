@@ -1,1 +1,9 @@
-<p>search works!</p>
+<form class="mt-1 p-1" [formGroup]="searchForm">
+  <mat-form-field appearance="legacy" class="max-width">
+    <mat-label>Name of the song</mat-label>
+    <input matInput formControlName="search" (keyup)="onSearch();">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</form>
+
+<app-card class="mt-1" [itemsInput]="artists"></app-card>
